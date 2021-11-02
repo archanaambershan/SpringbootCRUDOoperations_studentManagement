@@ -1,0 +1,20 @@
+package com.example.demo.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Repository.StudentRepository;
+import com.example.demo.Model.Student;
+import java.util.*;
+@RestController
+public class StudentController {
+	
+	@Autowired
+	private StudentRepository stdrepo;
+	
+	//get all student value
+	public List<Student> getAllStudent(){
+		return stdrepo.findAll();
+	}
+
+}
